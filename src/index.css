@@ -1,12 +1,24 @@
-div#card {
+button {
     background-color: white;
-    border: 3px;
-    border-radius: 5px;
-    margin: 10px 0px 0px 0px;
-    padding: 15px;
-    width: 250px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+div {
     font-family: sans-serif;
+}
+
+div.react-kanban-column {
+    --width: 300px;
+    width: 300px;
+}
+
+div#card {
+    width: calc(var(--width)*0.9);
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px 0px 5px 0px;
+    padding: 15px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 div#description {
@@ -32,7 +44,15 @@ div#header {
     text-align: center;
 }
 
+div#swimlane {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
 button#addcard {
+    border: 1px solid gray;
+    border-radius: 3px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     display: inline;
     float: right;
@@ -56,4 +76,14 @@ label {
 input {
     box-sizing: content-box;
     margin: 2px;
+}
+
+img {
+    width: 40px;
+    border-radius: 50%;
+    margin: 0px 5px 0px 0px;
+}
+
+img.button {
+    width: 30px;
 }

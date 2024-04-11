@@ -35,10 +35,6 @@ function CardEditor(props){
         // edit form for new cards
         <form method='post' id='editor' onSubmit={AddCard}>
             <label>
-                ID:
-                <input type='text' name='id' disabled/>
-            </label>
-            <label>
                 Description:
                 <input type='text' name='description' />
             </label>

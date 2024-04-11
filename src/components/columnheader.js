@@ -3,6 +3,7 @@ import CardEditor from './cardeditor.js';
 
 function ColumnHeader(props){
     const [showEditor, setShowEditor] = useState(false);
+    console.log(props);
     if (props.id === 1){
         // adds button and hidden editor in first column
         return (

@@ -1,32 +1,28 @@
 import { useState } from 'react';
-import { ControlledBoard, moveCard } from '@caldwell619/react-kanban';
-import board from './data';
-import Card from './components/card'
+import { ControlledBoard } from '@caldwell619/react-kanban';
+import emptyBoard from './test-data/emptyboard';
+import board from './test-data/data';
 import ColumnHeader from './components/columnheader';
+import UserBoard from './components/userboard';
 
 
 function Board() {
     // should get data from server
-    const [controlledBoard, setBoard] = useState(board);
-  
-    // need to post data to server
-    function handleCardMove(_card, source, destination) {
-      const updatedBoard = moveCard(controlledBoard, source, destination);
-      setBoard(updatedBoard);
-    }
+    const [allBoards, setAllBoards] = useState(board);
 
     return (
         <>
-        <ControlledBoard onCardDragEnd={handleCardMove} disableColumnDrag allowAddCard={false}
-        renderCard={(card) => {
-            return <Card {...card} />
-        }}
+        {/* renders headers only */}
+        <ControlledBoard disableColumnDrag allowAddCard={false}
         renderColumnHeader={(title) => {
-            return <ColumnHeader {...title} passBoard={controlledBoard} passSetBoard={setBoard} />
-        }}
-        >
-            {controlledBoard}
+            return <ColumnHeader {...title} allBoards={allBoards} setAllBoards={setAllBoards} />
+        }}>
+            {emptyBoard}
         </ControlledBoard>
+        {/* render boards for each user */}
+        {board.map((board) => {
+            return <UserBoard {...board} />
+        })}
         </>
     );
 }
