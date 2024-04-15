@@ -1,6 +1,14 @@
 button {
-    background-color: white;
-    border: none;
+    border: 1px solid grey;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+
+}
+
+button.view-toggle {
+    margin-left: 10px;
+    width: 15%;
 }
 
 div {
@@ -57,10 +65,11 @@ div#swimlane {
     vertical-align: middle;
 }
 
+div#main-header {
+    padding: 5px;
+}
+
 button#addcard {
-    border: 1px solid gray;
-    border-radius: 3px;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     display: inline;
     float: right;
 }
@@ -113,4 +122,44 @@ img {
 
 img.button {
     width: 30px;
+}
+
+button#toggle {
+    border: none;
+    box-shadow: none;
+    background-color: white;
+}
+
+div#lane-card {
+    border: 1px gray solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    align-items: center;
+}
+
+div#avatar {
+    justify-self: end;
+    width: fit-content;
+}
+
+div#lane {
+    border: 1px gray solid;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+div#priority-lane {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 20px;
+    text-transform: capitalize;
+
 }

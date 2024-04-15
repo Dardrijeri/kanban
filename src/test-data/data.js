@@ -2,7 +2,8 @@ const board = [
   {
     user: {
       name: 'Harold',
-      image: '/images/harold-03.png'
+      image: '/images/harold-03.png',
+      department: 'it'
     },
     board: {
       columns: [
@@ -65,7 +66,8 @@ const board = [
   {
     user: {
       name: 'David',
-      image: '/images/harold-02.png'
+      image: '/images/harold-02.png',
+      department: 'hr'
     },
     board: {
       columns: [
@@ -123,7 +125,8 @@ const board = [
   {
     user: {
       name: 'John',
-      image: '/images/harold-01.png'
+      image: '/images/harold-01.png',
+      department: 'rtd'
     },
     board: {
       columns: [
