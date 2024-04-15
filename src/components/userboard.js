@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ControlledBoard, moveCard } from '@caldwell619/react-kanban';
-import board from '../test-data/data';
 import Card from './card';
 import Swimlane from './swimlane';
 
@@ -16,7 +15,9 @@ function UserBoard(props){
         const updatedBoard = moveCard(controlledBoard, source, destination);
         setBoard(updatedBoard);
     }
+    
     return (
+        // prints separator and boards for users
         <>
             <Swimlane {...props.user} renderBoard={renderBoard} setRenderBoard={setRenderBoard} />
             {renderBoard && <ControlledBoard onCardDragEnd={handleCardMove} disableColumnDrag allowAddCard={false}

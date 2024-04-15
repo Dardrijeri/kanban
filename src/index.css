@@ -17,28 +17,35 @@ div#card {
     background-color: white;
     border-radius: 5px;
     margin: 5px 0px 5px 0px;
-    padding: 15px;
+    padding: 15px 15px 15px 15px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    border: solid 2px;
 }
 
 div#description {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
 div#priority {
-    display: inline;
-    font-size: small;
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 25%;
+    display: inline-block;
 }
 
 div#id {
     font-size: small;
-    display: inline;
+    display: inline-block;
     float: right;
 }
 
 div#header {
-    font-family: sans-serif;
+    margin-bottom: -30px;
+}
+
+div#title {
     font-weight: bold;
     display: inline;
     text-align: center;
@@ -62,20 +69,40 @@ form {
     background-color: white;
     border: 3px;
     border-radius: 5px;
-    display: grid;
-    width: fit-content;
     padding: 15px;
     margin: 15px 0px 0px 0px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 label {
-    width: 100%;
+    font-size: small;
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
 }
 
 input {
-    box-sizing: content-box;
-    margin: 2px;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 5px;
+    width: fit-content;
+}
+
+textarea {
+    height: 150px;
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+select {
+    margin: 2px 0px 5px 0px;
+    width: 50%;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+input#submitcard {
+    width: 50%;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 img {

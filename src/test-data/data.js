@@ -13,12 +13,14 @@ const board = [
             {
               id: 1,
               title: 'Add card',
-              description: 'Add capability to add a card in a column'
+              description: 'Add capability to add a card in a column',
+              priority: 'critical'
             },
             {
                 id: 3,
                 title: 'Another card',
-                description: 'Smth smth'
+                description: 'Smth smth',
+                priority: 'high-priority'
             },
           ]
         },
@@ -29,7 +31,8 @@ const board = [
                 {
                     id: 2,
                     title: 'Foo',
-                    description: 'Bar'
+                    description: 'Bar',
+                    priority: 'medium-priority'
                 },
             ]
         },
@@ -40,7 +43,8 @@ const board = [
               {
                   id: 4,
                   title: 'Foo',
-                  description: 'Bar'
+                  description: 'Bar',
+                  priority: 'low-priority'
               },
           ]
         },
@@ -49,7 +53,9 @@ const board = [
           title: 'Finished',
           cards: [
               {
-
+                  id: 5,
+                  description: 'Looks like finished',
+                  priority: 'low-priority'
               },
           ]
         }
@@ -105,9 +111,10 @@ const board = [
           id: 4,
           title: 'Finished',
           cards: [
-              {
-
-              },
+            {
+              id: 5,
+              description: 'Something something did good'
+            },
           ]
         }
       ]
@@ -163,7 +170,8 @@ const board = [
           title: 'Finished',
           cards: [
               {
-
+                id: 5,
+                description: 'Testing tests'
               },
           ]
         }

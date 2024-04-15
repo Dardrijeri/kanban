@@ -16,12 +16,13 @@ function Board() {
         <ControlledBoard disableColumnDrag allowAddCard={false}
         renderColumnHeader={(title) => {
             return <ColumnHeader {...title} allBoards={allBoards} setAllBoards={setAllBoards} />
-        }}>
+        }}
+        >
             {emptyBoard}
         </ControlledBoard>
         {/* render boards for each user */}
-        {board.map((board) => {
-            return <UserBoard {...board} />
+        {board.map((board, i) => {
+            return <UserBoard {...board} key={i}/>
         })}
         </>
     );
