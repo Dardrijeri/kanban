@@ -12,7 +12,7 @@ function ListView(props){
         filteredBoards = props.allBoards;
     }
     else {
-        filteredBoards = props.allBoards.filter((board) => board.user.department === department);
+        filteredBoards = props.allBoards.filter((board) => board.user.department === department.value);
     }
 
     // not sure about this, maybe should get it from board
