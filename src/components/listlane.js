@@ -14,7 +14,7 @@ function ListLane(props){
     }
 
     return (
-        <div id='lane-card'>
+        <div id='lane-card' style={{borderColor: props.color}}>
             <div id='description-lane'>{props.card.description}</div>
             <div id='priority-lane' style={{color: color}}>{props.card.priority}</div>
             <div id='avatar'><img src={props.user.image} alt='avatar'/></div>
