@@ -12,6 +12,7 @@ function Card(props){
         break;
         default: color = 'white';
     }
+
     return (
         <div id='card' style={{borderColor: color}}>
             <div id='description'>{ props.description }</div>

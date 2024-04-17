@@ -15,13 +15,15 @@ const board = [
               id: 1,
               title: 'Add card',
               description: 'Add capability to add a card in a column',
-              priority: 'critical'
+              priority: 'critical',
+              date: {week: 2, year: 2024}
             },
             {
                 id: 3,
                 title: 'Another card',
                 description: 'Smth smth',
-                priority: 'high-priority'
+                priority: 'high-priority',
+                date: {week: 1, year: 2024}
             },
           ]
         },
@@ -33,7 +35,8 @@ const board = [
                     id: 2,
                     title: 'Foo',
                     description: 'Bar',
-                    priority: 'medium-priority'
+                    priority: 'medium-priority',
+                    date: {week: 1, year: 2024}
                 },
             ]
         },
@@ -45,7 +48,8 @@ const board = [
                   id: 4,
                   title: 'Foo',
                   description: 'Bar',
-                  priority: 'low-priority'
+                  priority: 'low-priority',
+                  date: {week: 1, year: 2024}
               },
           ]
         },
@@ -56,7 +60,8 @@ const board = [
               {
                   id: 5,
                   description: 'Looks like finished',
-                  priority: 'low-priority'
+                  priority: 'low-priority',
+                  date: {week: 1, year: 2024}
               },
           ]
         }
@@ -78,12 +83,14 @@ const board = [
             {
               id: 1,
               title: 'Add card',
-              description: 'Card of different user'
+              description: 'Card of different user',
+              date: {week: 1, year: 2024}
             },
             {
                 id: 3,
                 title: 'Another card',
-                description: 'Idk what to write here'
+                description: 'Idk what to write here',
+                date: {week: 1, year: 2024}
             },
           ]
         },
@@ -94,7 +101,8 @@ const board = [
                 {
                     id: 2,
                     title: 'Foo',
-                    description: 'BarBar'
+                    description: 'BarBar',
+                    date: {week: 1, year: 2024}
                 },
             ]
         },
@@ -105,7 +113,8 @@ const board = [
               {
                   id: 4,
                   title: 'Foo',
-                  description: 'FooFoo'
+                  description: 'FooFoo',
+                  date: {week: 1, year: 2024}
               },
           ]
         },
@@ -115,7 +124,8 @@ const board = [
           cards: [
             {
               id: 5,
-              description: 'Something something did good'
+              description: 'Something something did good',
+              date: {week: 1, year: 2024}
             },
           ]
         }
@@ -137,12 +147,14 @@ const board = [
             {
               id: 1,
               title: 'Add card',
-              description: 'Card of different user'
+              description: 'Card of different user',
+              date: {week: 1, year: 2024}
             },
             {
                 id: 3,
                 title: 'Another card',
-                description: 'Idk what to write here'
+                description: 'Idk what to write here',
+                date: {week: 1, year: 2024}
             },
           ]
         },
@@ -153,7 +165,8 @@ const board = [
                 {
                     id: 2,
                     title: 'Foo',
-                    description: 'BarBar'
+                    description: 'BarBar',
+                    date: {week: 1, year: 2024}
                 },
             ]
         },
@@ -164,7 +177,8 @@ const board = [
               {
                   id: 4,
                   title: 'Foo',
-                  description: 'FooFoo'
+                  description: 'FooFoo',
+                  date: {week: 1, year: 2024}
               },
           ]
         },
@@ -174,7 +188,8 @@ const board = [
           cards: [
               {
                 id: 5,
-                description: 'Testing tests'
+                description: 'Testing tests',
+                date: {week: 1, year: 2024}
               },
           ]
         }
