@@ -1,20 +1,27 @@
+import { useState } from "react";
 import Card from "./card";
 import ColumnHeader from "./columnheader";
-import { ControlledBoard } from "@caldwell619/react-kanban";
-import board from "../test-data/data";
+import { ControlledBoard, moveCard } from "@caldwell619/react-kanban";
+import board from "../test-data/departmentboard";
 
 function DepartmentView(props){
-    let allBoards, setAllBoards;
+    const [departmentBoard, setDepartmentBoard] = useState(board);
+
+    function handleCardMove(_card, source, destination) {
+        const updatedBoard = moveCard(departmentBoard, source, destination);
+        setDepartmentBoard(updatedBoard);
+    }
+
     return ( 
-        <ControlledBoard disableColumnDrag allowAddCard={false}
+        <ControlledBoard disableColumnDrag allowAddCard={false} onCardDragEnd={handleCardMove} disableCardDrag
         renderColumnHeader={(title) => {
-            return <ColumnHeader {...title} allBoards={allBoards} setAllBoards={setAllBoards} />
+            return <ColumnHeader {...title} allBoards={departmentBoard} setAllBoards={setDepartmentBoard} />
         }}
         renderCard={(card) => {
                 return <Card {...card} selectedDate={props.date} />
         }}
         >
-            {board[0].board}
+            {departmentBoard}
         </ControlledBoard>);
 }
 

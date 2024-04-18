@@ -5,7 +5,7 @@ Implementation of controlled kanban board with usage of caldwell619 react librar
 ## How to run
 
 - Install node.js
-- Run 'npm install' inside directory
+- Run 'npm install' inside of directory
 - Start server with 'npm start'
 
 ## Data I/O

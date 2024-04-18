@@ -1,34 +1,16 @@
-import ListLane from "./listlane";
+import ListDepartment from "./listdepartment";
 import { useState } from "react";
 
 
 function ListBody(props){
+    const filteredData = props.data.filter((node) => props.departments.some((department) => department.value === node.value));
+
+
     const [showLanes, setShowLanes] = useState(true);
-    let color = 'white';
     return (
         <>
             <div id="lane"><button onClick={() => setShowLanes(!showLanes)}>+</button>{props.header}</div>
-            {
-                /* nested loop to cycle through cards  */
-                showLanes && props.filteredBoards.map((board) => {
-                    return board.board.columns[props.id].cards.map((card, i) => {
-                        switch(board.user.department){
-                            case 'rtd':
-                                color = 'red';
-                                break;
-                            case 'it':
-                                color = 'green';
-                                break;
-                            case 'hr':
-                                color = 'blue';
-                                break;
-                            default:
-                                color = 'gray';
-                        }
-                        return <ListLane card={card} user={board.user} color={color} key={i} />
-                    })
-                })
-            }
+            {showLanes && filteredData.map((node, i) => <ListDepartment key={i} value={node.value} cards={node.cards} />)}
         </>
     )
 }

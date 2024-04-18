@@ -18,6 +18,8 @@ function Card(props){
             <div id='description'>{ props.description }</div>
             <div id='priority' style={{backgroundColor: color}}></div>
             <div id='id'>#{ props.id } </div>
+            {props.employee && <div>{props.employee}</div>}
+            {props.employeePic && <div><img src={props.employeePic} alt="" /></div>}
         </div>
     )
 }

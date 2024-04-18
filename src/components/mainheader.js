@@ -6,10 +6,10 @@ function MainHeader(props){
     const years = Array(10).fill(2024).map((x, y) => {return {value: x + y, label: x + y}});
     return (
         <div id="main-header">
-            <button className="view-toggle" onClick={() => props.setBoardView('board')}>Board view</button>
-            <button className="view-toggle" onClick={() => props.setBoardView('list')}>List view</button>
-            <button className="view-toggle" onClick={() => props.setBoardView('department')}>Department</button>
-            <button className="view-toggle" onClick={() => props.setBoardView('personal')}>Personal</button>
+            <button className="view-toggle" onClick={() => props.setViewType('board')}>Board view</button>
+            <button className="view-toggle" onClick={() => props.setViewType('list')}>List view</button>
+            <button className="view-toggle" onClick={() => props.setViewType('department')}>Department</button>
+            <button className="view-toggle" onClick={() => props.setViewType('personal')}>Personal</button>
             Week:
             <Select className='date-select' name='week' options={weeks} onChange={(e) => props.setDate({week: e.value, year: props.date.year})}/>
             Year:

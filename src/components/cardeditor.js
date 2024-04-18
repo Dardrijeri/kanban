@@ -50,13 +50,6 @@ function CardEditor(props){
                 <option value="low-priority">Low-priority</option>
             </select>
             
-            {/* need to change */}
-            <label htmlFor='employee'>Employee:</label>
-            <select name='employee' id='employee'>
-                <option>Harold</option>
-                <option>John</option>
-                <option>David</option>
-            </select>
             <input type='submit' id='submitcard' />
         </form>
     );
