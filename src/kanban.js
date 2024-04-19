@@ -18,7 +18,7 @@ function Board() {
         switch(view) {
             case 'board': return <BoardView date={date} />
             case 'list': return <ListView date={date} />
-            case 'department': return <DepartmentView date={date} />
+            case 'department': return <DepartmentView date={date} currentUser={user}/>
             case 'personal': return <PersonalView date={date} />
             default: return 'Error'
         }

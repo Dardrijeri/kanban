@@ -1,4 +1,9 @@
+import CardContextMenu from "./card-context-menu";
+import { useState } from "react";
+
+
 function Card(props){
+    const [showContextMenu, setShowContextMenu] = useState(false);
     // form for displaying cards
     let color = 'white';
     switch(props.priority){
@@ -13,8 +18,19 @@ function Card(props){
         default: color = 'white';
     }
 
+    // handle right-click on card
+    function contextMenuHandler(e){
+        e.preventDefault();
+        
+        // hide menu if user is not manager
+        if (props.disableContext) return;
+        
+        setShowContextMenu(true);
+    }
+
     return (
-        <div id='card' style={{borderColor: color}}>
+        <div id='card' style={{borderColor: color}} onContextMenu={(e) => contextMenuHandler(e)}>
+            {showContextMenu && <CardContextMenu {...props} setShowContextMenu={setShowContextMenu}/>}
             <div id='description'>{ props.description }</div>
             <div id='priority' style={{backgroundColor: color}}></div>
             <div id='id'>#{ props.id } </div>

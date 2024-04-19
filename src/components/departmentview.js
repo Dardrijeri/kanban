@@ -13,12 +13,12 @@ function DepartmentView(props){
     }
 
     return ( 
-        <ControlledBoard disableColumnDrag allowAddCard={false} onCardDragEnd={handleCardMove} disableCardDrag
+        <ControlledBoard disableColumnDrag allowAddCard={false} onCardDragEnd={handleCardMove} disableCardDrag = {props.currentUser.role !== 'manager'}
         renderColumnHeader={(title) => {
-            return <ColumnHeader {...title} allBoards={departmentBoard} setAllBoards={setDepartmentBoard} />
+            return <ColumnHeader {...title} allBoards={departmentBoard} setAllBoards={setDepartmentBoard} allowEdit = {props.currentUser.role === 'manager'} />
         }}
         renderCard={(card) => {
-                return <Card {...card} selectedDate={props.date} />
+                return <Card {...card} board={departmentBoard} setBoard={setDepartmentBoard} selectedDate={props.date} disableContext = {props.currentUser.role !== 'manager'} />
         }}
         >
             {departmentBoard}

@@ -21,7 +21,7 @@ function UserBoard(props){
     }
 
     // toggle for rendering board
-    const [renderBoard, setRenderBoard] = useState(true);
+    const [renderBoard, setRenderBoard] = useState(props.render);
 
     // need to post data to server
     // also should ignore order changes, since it is difficult to store order on backend
