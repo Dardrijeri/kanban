@@ -7,8 +7,18 @@ import board from "../test-data/data";
 
 
 function BoardView(props){
-    const [allBoards, setAllBoards] = useState(board);
+    // sort to show current user board first
+    // followed up by their department
+    function sort(a, b){
+        if (a.user.name === props.currentUser.name) return -1;
+        if (b.user.name === props.currentUser.name) return 1;
+        if (a.user.department === props.currentUser.department) return -1;
+        return 1;
+    }
 
+    board.sort((a, b) => sort(a, b));
+    const [allBoards, setAllBoards] = useState(board);
+    
     return(
         <>
             {/* renders headers only */}
@@ -27,6 +37,7 @@ function BoardView(props){
         </>
     )
 }
+
 
 
 export default BoardView;
