@@ -34,6 +34,7 @@ function Card(props){
             <div id='description'>{ props.description }</div>
             <div id='priority' style={{backgroundColor: color}}></div>
             <div id='id'>#{ props.id } </div>
+            {props.date.week && <div id='date'>W{ props.date.week } Y{ props.date.year % 100 }</div>}
             {props.employee && <div>{props.employee}</div>}
             {props.employeePic && <div><img src={props.employeePic} alt="" /></div>}
         </div>

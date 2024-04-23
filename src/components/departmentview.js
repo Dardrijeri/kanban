@@ -26,9 +26,16 @@ function DepartmentView(props){
     const [departmentBoard, setDepartmentBoard] = useState(board);
 
     function handleCardMove(_card, source, destination) {
-        // forbids changing order and moving cards without employee
-        if (source.fromColumnId === destination.toColumnId || _card.employee === '' || !_card.employee) return;
-        const updatedBoard = moveCard(departmentBoard, source, destination);
+        // forbids changing order and questionable actions
+        if (source.fromColumnId === destination.toColumnId || _card.employee === '' || !_card.employee
+            || destination.toColumnId === 1) return;
+        
+        // if task is pulled from backlog, sets date for task
+        if (source.fromColumnId === 1) {
+            _card.date = {week: props.date.week, year: props.date.year}
+        }
+
+        const updatedBoard = moveCard(departmentBoard, source, destination);  
         setDepartmentBoard(updatedBoard);
         // maybe should sort here
     }

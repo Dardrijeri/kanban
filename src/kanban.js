@@ -11,8 +11,13 @@ function Board() {
     // change view
     const [viewType, setViewType] = useState('board');
 
+    // get current week
+    let now = new Date();
+    let onejan = new Date(now.getFullYear(), 0, 1);
+    let week = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+ 
     // year and week state
-    const [date, setDate] = useState({week: 1, year: 2024})
+    const [date, setDate] = useState({week: week, year: now.getFullYear()})
 
     function switchView(view){
         switch(view) {

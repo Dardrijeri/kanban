@@ -7,7 +7,6 @@ function UserBoard(props){
     // pre-filter board with current week and year
     let filteredBoard = {...props.board};
     filteredBoard.columns = props.board.columns.map((column) => ({...column, cards: column.cards.filter((card) => (card.date.year === props.date.year & card.date.week === props.date.week)), }));
-
     // current user's board
     const [controlledBoard, setBoard] = useState(filteredBoard);
 
