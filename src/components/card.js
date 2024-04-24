@@ -29,12 +29,12 @@ function Card(props){
     }
 
     return (
-        <div id='card' style={{borderColor: color}} onContextMenu={(e) => contextMenuHandler(e)}>
+        !props.dontRender && <div id='card' style={{borderColor: color}} onContextMenu={(e) => contextMenuHandler(e)}>
             {showContextMenu && <CardContextMenu {...props} setShowContextMenu={setShowContextMenu}/>}
             <div id='description'>{ props.description }</div>
             <div id='priority' style={{backgroundColor: color}}></div>
             <div id='id'>#{ props.id } </div>
-            {props.date.week && <div id='date'>W{ props.date.week } Y{ props.date.year % 100 }</div>}
+            {props.date.week && <div id='date' style={props.overdue ? {fontWeight: 'bold', color: 'red'} : {}}>W{ props.date.week } Y{ props.date.year % 100 }</div>}
             {props.employee && <div>{props.employee}</div>}
             {props.employeePic && <div><img src={props.employeePic} alt="" /></div>}
         </div>

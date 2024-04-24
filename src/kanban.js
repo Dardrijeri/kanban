@@ -23,7 +23,7 @@ function Board() {
         switch(view) {
             case 'board': return <BoardView date={date} currentUser={user} />
             case 'list': return <ListView date={date} />
-            case 'department': return <DepartmentView date={date} currentUser={user} />
+            case 'department': return <DepartmentView date={date} currentWeek={week} currentYear={now.getFullYear()} currentUser={user} />
             case 'personal': return <PersonalView date={date} />
             default: return 'Error'
         }

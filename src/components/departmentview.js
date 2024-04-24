@@ -23,6 +23,7 @@ function DepartmentView(props){
         return 0
     })
 
+    filterByDate(board, props.currentWeek, props.currentYear);
     const [departmentBoard, setDepartmentBoard] = useState(board);
 
     function handleCardMove(_card, source, destination) {
@@ -32,6 +33,14 @@ function DepartmentView(props){
         
         // if task is pulled from backlog, sets date for task
         if (source.fromColumnId === 1) {
+            if (props.date.year < props.currentYear || props.date.week < props.currentWeek) {
+                alert("You can't put task in the past");
+                return;
+            }
+            if (props.date.year > props.currentYear || props.date.week > props.currentWeek) {
+                const answer = window.confirm("Are you sure you want to move the task into the future?")
+                if (!answer) return;
+            }
             _card.date = {week: props.date.week, year: props.date.year}
         }
 
@@ -39,6 +48,7 @@ function DepartmentView(props){
         setDepartmentBoard(updatedBoard);
         // maybe should sort here
     }
+
 
     return ( 
         <ControlledBoard disableColumnDrag allowAddCard={false} onCardDragEnd={handleCardMove} disableCardDrag = {props.currentUser.role !== 'manager'}
@@ -54,3 +64,24 @@ function DepartmentView(props){
 }
 
 export default DepartmentView;
+
+function filterByDate(board, week, year){
+    board.columns.forEach(column => {
+        if (column.id === 2 || column.id === 3){
+            column.cards.forEach(card => {
+                if (card.date.week !== week || card.date.year !== year) {
+                    if (!card.newDate || card.newDate !== week) {
+                        card.overdue = true;
+                    }
+                }
+            })
+        }
+        if (column.id === 4){
+            column.cards.forEach(card => {
+                if (card.date.week !== week || card.date.year !== year) {
+                    card.dontRender = true;
+                }
+            })
+        }
+    });
+}
