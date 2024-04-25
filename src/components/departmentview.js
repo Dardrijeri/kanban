@@ -23,8 +23,7 @@ function DepartmentView(props){
         return 0
     })
 
-    filterByDate(board, props.currentWeek, props.currentYear);
-    const [departmentBoard, setDepartmentBoard] = useState(board);
+    const [departmentBoard, setDepartmentBoard] = useState({...board});
 
     function handleCardMove(_card, source, destination) {
         // forbids changing order and questionable actions
@@ -53,10 +52,10 @@ function DepartmentView(props){
     return ( 
         <ControlledBoard disableColumnDrag allowAddCard={false} onCardDragEnd={handleCardMove} disableCardDrag = {props.currentUser.role !== 'manager'}
         renderColumnHeader={(title) => {
-            return <ColumnHeader {...title} allBoards={departmentBoard} setAllBoards={setDepartmentBoard} allowEdit = {props.currentUser.role === 'manager'} />
+            return <ColumnHeader {...title} board={departmentBoard} setBoard={setDepartmentBoard} allowEdit = {props.currentUser.role === 'manager'} />
         }}
         renderCard={(card) => {
-                return <Card {...card} board={departmentBoard} setBoard={setDepartmentBoard} selectedDate={props.date} disableContext = {props.currentUser.role !== 'manager'} />
+            return <Card {...card} board={departmentBoard} setBoard={setDepartmentBoard} selectedDate={props.date} disableContext = {props.currentUser.role !== 'manager'} />
         }}
         >
             {departmentBoard}
@@ -64,24 +63,3 @@ function DepartmentView(props){
 }
 
 export default DepartmentView;
-
-function filterByDate(board, week, year){
-    board.columns.forEach(column => {
-        if (column.id === 2 || column.id === 3){
-            column.cards.forEach(card => {
-                if (card.date.week !== week || card.date.year !== year) {
-                    if (!card.newDate || card.newDate !== week) {
-                        card.overdue = true;
-                    }
-                }
-            })
-        }
-        if (column.id === 4){
-            column.cards.forEach(card => {
-                if (card.date.week !== week || card.date.year !== year) {
-                    card.dontRender = true;
-                }
-            })
-        }
-    });
-}

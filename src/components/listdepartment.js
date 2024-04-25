@@ -22,6 +22,7 @@ function ListLane(props){
     return (
         <div id="lane-card" style={{borderColor: props.color}}>
             <div>{props.description}</div>
+            <div id="date">W{props.date.week}Y{props.date.year % 100}</div>
             <div id="priority-lane">{props.priority}</div>
             <div id="avatar"><img src={props.employeePic} alt="" /></div>
         </div>

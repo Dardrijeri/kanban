@@ -24,7 +24,7 @@ function Board() {
             case 'board': return <BoardView date={date} currentUser={user} />
             case 'list': return <ListView date={date} />
             case 'department': return <DepartmentView date={date} currentWeek={week} currentYear={now.getFullYear()} currentUser={user} />
-            case 'personal': return <PersonalView date={date} />
+            case 'personal': return <PersonalView date={date} currentUser={user} />
             default: return 'Error'
         }
     }

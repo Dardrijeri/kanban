@@ -32,7 +32,7 @@ function BoardView(props){
             
             {/* render boards for each user */}
             {allBoards.map((board, i) => {
-                return <UserBoard {...board} key={i} date={props.date} render={i ? false : true}/>
+                return <UserBoard {...board} key={i} date={props.date} render={i ? false : true} currentUser={props.currentUser} />
             })}
         </>
     )

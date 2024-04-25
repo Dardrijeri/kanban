@@ -11,7 +11,7 @@ function MainHeader(props){
             <button className="view-toggle" onClick={() => props.setViewType('department')}>Department</button>
             <button className="view-toggle" onClick={() => props.setViewType('personal')}>Personal</button>
             Week:
-            <Select className='date-select' name='week' options={weeks} defaultValue={{label:props.date.week}} onChange={(e) => props.setDate({week: e.value, year: props.date.year})}/>
+            <Select className='date-select' name='week' options={weeks} defaultValue={{value: props.date.week, label: props.date.week}} onChange={(e) => props.setDate({week: e.value, year: props.date.year})}/>
             Year:
             <Select className='date-select' name='year' options={years} defaultValue={{label:props.date.year}} onChange={(e) => props.setDate({week: props.date.week, year: e.value})}/>
         

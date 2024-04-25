@@ -15,17 +15,51 @@ const list = [
                         "employee": "John",
                         "employeePic": "/images/harold-01.png"
                     },
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
                 ]
             },
             {
                 label: 'R&D',
                 value: 'rtd',
-                cards: []
+                cards: [
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
+                ]
             },
             {
                 label: 'HR',
                 value: 'hr',
-                cards: []
+                cards: [
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
+                ]
             }
         ]
     },
@@ -36,7 +70,16 @@ const list = [
             {
                 label: 'IT',
                 value: 'it',
-                cards: []
+                cards: [
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
+                ]
             },
             {
                 label: 'R&D',
@@ -57,7 +100,16 @@ const list = [
             {
                 label: 'IT',
                 value: 'it',
-                cards: []
+                cards: [
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
+                ]
             },
             {
                 label: 'R&D',
@@ -78,7 +130,16 @@ const list = [
             {
                 label: 'IT',
                 value: 'it',
-                cards: []
+                cards: [
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
+                ]
             },
             {
                 label: 'R&D',
@@ -99,7 +160,16 @@ const list = [
             {
                 label: 'IT',
                 value: 'it',
-                cards: []
+                cards: [
+                    {
+                        "id": 6,
+                        "description": "Perform security audit for network infrastructure.",
+                        "priority": "high-priority",
+                        "date": {"week": 3, "year": 2024},
+                        "employee": "John",
+                        "employeePic": "/images/harold-01.png"
+                    },
+                ]
             },
             {
                 label: 'R&D',

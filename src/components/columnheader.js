@@ -9,9 +9,7 @@ function ColumnHeader(props){
             <div id='header'>
                 <div id='title'>{props.title}</div>
                 <button type='button' id='addcard' onClick={() => setShowEditor(!showEditor)}>Add card</button>
-                {showEditor && <CardEditor passShowEditor={showEditor} passSetShowEditor={setShowEditor}
-                allBoards={props.allBoards} setAllBoards={props.setAllBoards}
-                />}
+                {showEditor && <CardEditor setShowEditor={setShowEditor} board={props.board} setBoard={props.setBoard} />}
             </div>
         );
     }
