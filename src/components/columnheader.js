@@ -3,21 +3,32 @@ import CardEditor from './cardeditor.js';
 
 function ColumnHeader(props){
     const [showEditor, setShowEditor] = useState(false);
+ 
+    // adds button and hidden editor in first column
     if (props.id === 1 & props.allowEdit){
-        // adds button and hidden editor in first column
         return (
-            <div id='header'>
-                <div id='title'>{props.title}</div>
-                <button type='button' id='addcard' onClick={() => setShowEditor(!showEditor)}>Add card</button>
+            <div className='header'>
+                <div className='title'>{props.title}</div>
+                <button type='button' className='addcard' onClick={() => setShowEditor(!showEditor)}>Add card</button>
                 {showEditor && <CardEditor setShowEditor={setShowEditor} board={props.board} setBoard={props.setBoard} />}
             </div>
         );
     }
-    else {
+
+    if (props.id === 5) {
         return (
-            <div id='header'><div id='title'>{props.title}</div></div>
-        );
+            <div className='header'>
+                {props.showDropped ?
+                <button type='button' className='dropped-trigger' onClick={() => props.setShowDropped(false)}>Hide dropped</button> :
+                <button type='button' className='dropped-trigger' onClick={() => props.setShowDropped(true)}>Show dropped</button>
+                }
+            </div>
+        )
     }
+
+    return (
+        <div className='header'><div className='title'>{props.title}</div></div>
+    );
 }
 
 export default ColumnHeader;

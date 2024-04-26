@@ -5,6 +5,10 @@ import { ControlledBoard, moveCard } from "@caldwell619/react-kanban";
 import board from "../test-data/departmentboard";
 
 function DepartmentView(props){
+    // toggle for Dropped column
+    const [showDropped, setShowDropped] = useState(false);
+    // changes what to get from server
+
     // sort backlog based on priority
     board.columns[0].cards.sort((a, b) => {
         let priority = {
@@ -49,10 +53,11 @@ function DepartmentView(props){
     }
 
 
+
     return ( 
         <ControlledBoard disableColumnDrag allowAddCard={false} onCardDragEnd={handleCardMove} disableCardDrag = {props.currentUser.role !== 'manager'}
         renderColumnHeader={(title) => {
-            return <ColumnHeader {...title} board={departmentBoard} setBoard={setDepartmentBoard} allowEdit = {props.currentUser.role === 'manager'} />
+            return <ColumnHeader {...title} board={departmentBoard} setBoard={setDepartmentBoard} allowEdit = {props.currentUser.role === 'manager'} setShowDropped={setShowDropped} showDropped={showDropped} />
         }}
         renderCard={(card) => {
             return <Card {...card} board={departmentBoard} setBoard={setDepartmentBoard} selectedDate={props.date} disableContext = {props.currentUser.role !== 'manager'} />

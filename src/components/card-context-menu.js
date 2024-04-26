@@ -39,7 +39,7 @@ function CardContextMenu(props){
     return (
     <>
         {/* handles click outside of contextbox */}
-        <div style={{position: 'fixed', width: '100%', height: '100%', top: 0, left: 0}} onClick={() => props.setShowContextMenu(false)}/>
+        <div style={{position: 'fixed', width: '100%', height: '100%', top: 0, left: 0}} onMouseDown={() => props.setShowContextMenu(false)} />
         <div className="context-menu">
             <button onClick={() => {props.setShowEditor(true); props.setShowContextMenu(false);}}>Edit card</button>
             { showSelect ? 

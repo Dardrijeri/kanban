@@ -32,21 +32,22 @@ function Card(props){
     }
 
     function changeDateStyle(){
-        if (props.date.week < props.selectedDate.week & !props.newDate || props.newDate.week < props.selectedDate.week) {
+        if (props.date.week < props.selectedDate.week & (!props.newDate || props.newDate.week < props.selectedDate.week)) {
             return {color: 'red', fontWeight: 'bold'}
         }
     }
 
     return (
-        <div id='card' style={{borderColor: color}} onContextMenu={(e) => contextMenuHandler(e)}>
+        <div className='card' style={{borderColor: color}} onContextMenu={(e) => contextMenuHandler(e)}>
             {showContextMenu && <CardContextMenu {...props} setShowContextMenu={setShowContextMenu} setShowEditor={setShowEditor} />}
             {showEditor && <CardEditor {...props} setShowEditor={setShowEditor} />}
-            <div id='description'>{ props.description }</div>
-            <div id='priority' style={{backgroundColor: color}}></div>
-            <div id='id'>#{ props.id } </div>
-            {props.date.week && <div id='date' style={changeDateStyle()}>W{ props.date.week } Y{ props.date.year % 100 }</div>}
-            {props.employee && <div>{props.employee}</div>}
-            {props.employeePic && <div><img src={props.employeePic} alt="" /></div>}
+            <div className='description'>{ props.description }</div>
+            <hr width='100%' size='2' color='#727272' />
+            <div className='employee'>
+                {props.employeePic && <div className='employee-pic'><img src={props.employeePic} alt="" /></div>}
+                {props.employee && <div>{props.employee}</div>}
+            </div>
+            {props.date.week && <div className='date' style={changeDateStyle()}>W{ props.date.week } Y{ props.date.year % 100 }</div>}
         </div>
     )
 }

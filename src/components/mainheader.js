@@ -5,7 +5,7 @@ function MainHeader(props){
     const weeks = Array(52).fill(1).map((x, y) => {return {value: x + y, label: x + y}});
     const years = Array(10).fill(2024).map((x, y) => {return {value: x + y, label: x + y}});
     return (
-        <div id="main-header">
+        <div className="main-header">
             <button className="view-toggle" onClick={() => props.setViewType('board')}>Board view</button>
             <button className="view-toggle" onClick={() => props.setViewType('list')}>List view</button>
             <button className="view-toggle" onClick={() => props.setViewType('department')}>Department</button>
