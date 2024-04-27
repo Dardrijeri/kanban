@@ -31,7 +31,7 @@ function Board() {
 
     return (
         <>
-        <MainHeader setViewType={setViewType} date={date} setDate={setDate} />
+        <MainHeader setViewType={setViewType} viewType={viewType} date={date} setDate={setDate} />
         {/* change representation on condition */}
         { switchView(viewType) }
         </>

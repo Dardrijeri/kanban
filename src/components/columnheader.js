@@ -9,7 +9,7 @@ function ColumnHeader(props){
         return (
             <div className='header'>
                 <div className='title'>{props.title}</div>
-                <button type='button' className='addcard' onClick={() => setShowEditor(!showEditor)}>Add card</button>
+                <button type='button' className='addcard' onClick={() => setShowEditor(!showEditor)}><img src='images/add-button.svg' alt='Add' /></button>
                 {showEditor && <CardEditor setShowEditor={setShowEditor} board={props.board} setBoard={props.setBoard} />}
             </div>
         );

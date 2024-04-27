@@ -1,5 +1,6 @@
 import Select from 'react-select';
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 
 function CardContextMenu(props){
@@ -37,10 +38,11 @@ function CardContextMenu(props){
     }
 
     return (
+    createPortal(
     <>
         {/* handles click outside of contextbox */}
         <div style={{position: 'fixed', width: '100%', height: '100%', top: 0, left: 0}} onMouseDown={() => props.setShowContextMenu(false)} />
-        <div className="context-menu">
+        <div className="context-menu" style={{position: 'absolute', left: props.mouseCord[0], top: props.mouseCord[1]}}>
             <button onClick={() => {props.setShowEditor(true); props.setShowContextMenu(false);}}>Edit card</button>
             { showSelect ? 
             <Select onChange={(e) => selectEmployee(e)} options={options}/> 
@@ -49,8 +51,8 @@ function CardContextMenu(props){
             }
             <button onClick={() => setNewDate()}>Ignore overdue</button>
         </div>
-    </>
-    );
+    </>, document.body
+    ));
 }
 
 export default CardContextMenu;

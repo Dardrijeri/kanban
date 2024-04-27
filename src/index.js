@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Board from './kanban';
 import './index.css';
-import '@caldwell619/react-kanban/dist/styles.css';
 
 
 function App(){

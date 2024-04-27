@@ -1,8 +1,8 @@
 body {
     font-family: sans-serif;
-    /* color of site
-    background-color: #212529;
-    */
+    /* color of site */
+    background-color: #212121;
+
 }
 
 /* scale-down images if necessary */
@@ -11,85 +11,172 @@ img {
     height: auto;
 }
 
-div.react-kanban-board>div {
+.main-header {
+    padding: 5px;
+    display: flex;
+    gap: 20px;
+    color: #E4E4E4;
+    align-items: center;
+}
+
+.view-toggle {
+    display: block;
+    flex: 1;
+    align-self: stretch;
+    background-color: #383838;
+    border-radius: 10px;
+    border: 0px;
+    color: #E4E4E4;
+    box-shadow: 5px 5px 3px #141414;
+}
+
+.view-toggle:hover {
+    opacity: 70%;
+}
+
+.date-select {
+    flex: 0.5;
+}
+
+.react-kanban-board>div {
     display: flex;
     flex: 1;
 }
 
-div.react-kanban-column {
+.react-kanban-column {
     flex: 1;
+    background-color: #383838;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 /* override library style */
-div.react-kanban-column>div>div>div {
+.react-kanban-column>div>div>div {
     width: 100%;
 }
 
-div.card {
+.card {
     display: flex;
     border-radius: 5px;
-    background-color: white;
     flex-direction: column;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-    border-top: 3px solid;
-    background-color: #2e353b;
+    border-left: 5px solid;
+    background-color: #212121;
     color: #e4e4e4;
     transition: 0.5s;
+}
+
+.header {
+    color: #E4E4E4;
+    padding: 5px 0 0 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.addcard {
+    background-color: transparent;
+    border: transparent;
+    height: auto;
+    width: 30px;
+    margin-top: -3px;
+    margin-bottom: -4px;
+    transition: 0.5s;
+}
+
+.addcard:hover {
+    transform: scale(1.3);
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-div.description {
+.description {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     font-weight: bold;
 }
 
-div.employee {
+.employee {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-div.employee-pic {
+.employee-pic {
     width: 13%;
+    display: flex;
 
     img {
         border-radius: 50%;
     }
 }
 
-div.date {
-    align-self: end;
+.date {
+    margin-left: auto;
     color: #727272;
-    font-size: small;
-}
-
-button {
-    border: 1px solid grey;
-    border-radius: 3px;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    padding: 5px;
-
-}
-
-button.view-toggle {
-    width: 15%;
-}
-
-div.header {
-    margin-bottom: 30px;
-}
-
-div.title {
     font-weight: bold;
-    display: inline;
-    text-align: center;
+    opacity: 90%;
+}
+
+.context-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px solid #55555556;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #141414;
+    width: 200px;
+    background-color: #212121;
+
+    button {
+        width: 100%;
+        background-color: #383838;
+        border-color: #55555556;
+        color: #E4E4E4;
+        border-radius: 10px;
+    }
+
+    button:hover {
+        opacity: 80%;
+    }
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #212121;
+    width: 25%;
+    height: 25%;
+    border-radius: 10px;
+    color: #E4E4E4;
+
+    padding: 15px;
+    gap: 10px;
+
+    .description,
+    .priority,
+    .submit-card {
+        background-color: #383838;
+        color: #E4E4E4;
+        border-radius: 10px;
+        border-color: #55555556;
+    }
+
+    .description {
+        flex: 1;
+    }
 }
 
 div.swimlane {
@@ -98,67 +185,8 @@ div.swimlane {
     vertical-align: middle;
 }
 
-div.main-header {
-    padding: 5px;
-    display: flex;
-    gap: 20px;
-}
 
-button.addcard {
-    display: inline;
-    float: right;
-}
 
-form {
-    position: fixed;
-    left: 37.5%;
-    top: 15%;
-    width: 25%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 15px;
-}
-
-label {
-    font-size: small;
-    color: rgba(0, 0, 0, 0.5);
-    display: block;
-}
-
-input {
-    display: block;
-    box-sizing: border-box;
-    margin-top: 5px;
-    width: fit-content;
-}
-
-textarea {
-    height: 150px;
-    width: 100%;
-    margin-bottom: 5px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-select {
-    margin: 2px 0px 5px 0px;
-    width: 50%;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-input#submitcard {
-    width: 50%;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-img.button {
-    width: 30px;
-}
-
-button#toggle {
-    border: none;
-    box-shadow: none;
-    background-color: white;
-}
 
 div#lane-card {
     border: 2px gray solid;
@@ -170,11 +198,6 @@ div#lane-card {
     padding: 5px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
     align-items: center;
-}
-
-div#avatar {
-    justify-self: end;
-    width: fit-content;
 }
 
 div#lane {
@@ -194,22 +217,7 @@ div#priority-lane {
 
 }
 
-div.context-menu {
-    position: absolute;
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
-    width: 200px;
-    background-color: whitesmoke;
-
-    button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
-
-div#back-drop {
+.back-drop {
     position: fixed;
     width: 100%;
     height: 100%;
