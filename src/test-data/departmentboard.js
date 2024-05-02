@@ -132,12 +132,6 @@ const board = {
             "id": 5,
             "title": "Dropped",
             "cards": [
-                {
-                    "id": 15,
-                    "description": "Внедрить шифрование файлов для защиты конфиденциальных данных.",
-                    "priority": "low-priority",
-                    "date": {"week": 1, "year": 2024}
-                }
             ]
         }
     ]

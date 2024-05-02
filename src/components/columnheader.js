@@ -19,8 +19,8 @@ function ColumnHeader(props){
         return (
             <div className='header'>
                 {props.showDropped ?
-                <button type='button' className='dropped-trigger' onClick={() => props.setShowDropped(false)}>Hide dropped</button> :
-                <button type='button' className='dropped-trigger' onClick={() => props.setShowDropped(true)}>Show dropped</button>
+                <><div className='title'>Dropped</div><button type='button' className='dropped-trigger' onClick={() => props.setShowDropped(false)}><img src='images/collapse-left.svg' alt='hide' /></button></> :
+                <button type='button' className='dropped-trigger' onClick={() => props.setShowDropped(true)}><img src='images/expand-right.svg' alt='show' /></button>
                 }
             </div>
         )

@@ -55,6 +55,7 @@ function DepartmentView(props){
 
 
     return ( 
+        <div className={showDropped ? '' : 'hide-dropped'} >
         <ControlledBoard disableColumnDrag allowAddCard={false} onCardDragEnd={handleCardMove} disableCardDrag = {props.currentUser.role !== 'manager'}
         renderColumnHeader={(title) => {
             return <ColumnHeader {...title} board={departmentBoard} setBoard={setDepartmentBoard} allowEdit = {props.currentUser.role === 'manager'} setShowDropped={setShowDropped} showDropped={showDropped} />
@@ -64,7 +65,9 @@ function DepartmentView(props){
         }}
         >
             {departmentBoard}
-        </ControlledBoard>);
+        </ControlledBoard>
+        </div>
+    );
 }
 
 export default DepartmentView;

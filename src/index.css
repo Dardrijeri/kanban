@@ -38,17 +38,48 @@ img {
     flex: 0.5;
 }
 
+.date-select>.react-select__control,
+.date-select>.react-select__menu {
+    background-color: #383838;
+    border: 0px;
+    box-shadow: 5px 5px 3px #141414;
+    border-radius: 10px;
+}
+
+
+.react-select__menu-list>.react-select__option--is-focused {
+    background-color: #212121;
+}
+
+.react-select__value-container>.react-select__single-value,
+.react-select__value-container>.react-select__input-container {
+    color: #E4E4E4;
+}
+
 .react-kanban-board>div {
     display: flex;
-    flex: 1;
+    overflow: hidden;
+
 }
 
 .react-kanban-column {
     flex: 1;
+    min-width: 0;
     background-color: #383838;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+}
+
+/* hack to shrink 5th column */
+.hide-dropped>.react-kanban-board>div>.react-kanban-column:last-child {
+    flex: 0;
+    min-width: fit-content;
+}
+
+/* hack to hide cards in 5th column */
+.hide-dropped>.react-kanban-board>div>.react-kanban-column:last-child>div:last-child {
+    display: none;
 }
 
 /* override library style */
@@ -77,14 +108,24 @@ img {
     display: flex;
 }
 
-.addcard {
+.addcard,
+.dropped-trigger {
     background-color: transparent;
     border: transparent;
     height: auto;
+}
+
+.addcard {
     width: 30px;
     margin-top: -3px;
     margin-bottom: -4px;
     transition: 0.5s;
+}
+
+.dropped-trigger {
+    margin-top: -7px;
+    margin-bottom: -10px;
+    width: 40px;
 }
 
 .addcard:hover {
