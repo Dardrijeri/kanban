@@ -50,7 +50,6 @@ function Card(props){
                 {props.employee && <div className='employee-name'>{props.employee}</div>}
                 {props.date.week && <div className='date' style={changeDateStyle()}>W{ props.date.week } Y{ props.date.year % 100 }</div>}
             </div>
-            
         </div>
     )
 }

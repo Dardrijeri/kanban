@@ -10,7 +10,7 @@ function DepartmentView(props){
     // changes what to get from server
 
     // sort backlog based on priority
-    board.columns[0].cards.sort((a, b) => {
+    board.columns.forEach((column) => column.cards.sort((a, b) => {
         let priority = {
             'critical': 3,
             'high-priority': 2,
@@ -18,7 +18,7 @@ function DepartmentView(props){
             'low-priority': 0
         }
         return (priority[b.priority] - priority[a.priority])
-    })
+    }))
     
     // sort backlog based on if employee is selected
     board.columns[0].cards.sort((a, b) => {

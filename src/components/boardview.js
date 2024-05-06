@@ -22,13 +22,15 @@ function BoardView(props){
     return(
         <>
             {/* renders headers only */}
-            <ControlledBoard disableColumnDrag allowAddCard={false}
-            renderColumnHeader={(title) => {
-                return <ColumnHeader {...title} allBoards={allBoards} setAllBoards={setAllBoards} />
-            }}
-            >
-                {emptyBoard}
-            </ControlledBoard>
+            <div className="hide-cards">
+                <ControlledBoard disableColumnDrag allowAddCard={false}
+                renderColumnHeader={(title) => {
+                    return <ColumnHeader {...title} allBoards={allBoards} setAllBoards={setAllBoards} />
+                }}
+                >
+                    {emptyBoard}
+                </ControlledBoard>
+            </div>
             
             {/* render boards for each user */}
             {allBoards.map((board, i) => {

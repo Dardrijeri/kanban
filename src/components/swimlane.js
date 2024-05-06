@@ -1,10 +1,8 @@
 function Swimlane(props){
     return (
-        <div id='swimlane'>
-            <button type='button' id='toggle' onClick={() => props.setRenderBoard(!props.renderBoard)}>
-                {props.renderBoard ? 
-                <img src='/images/up-arrow.svg' className='button' alt='Close' /> : 
-                <img src='/images/down-arrow.svg' className='button' alt='Open' />}
+        <div className='swimlane'>
+            <button type='button' className='toggle' onClick={() => props.setRenderBoard(!props.renderBoard)}>
+                <img src={props.renderBoard ? '/images/up-arrow.svg' : '/images/down-arrow.svg'} className='button' alt='Close' />
             </button>
             <img src={props.image} alt='Avatar'/>
             {props.name}

@@ -11,10 +11,10 @@ function ListView(props){
     const options = data[0].departments.map((node) => ({label: node.label, value: node.value}))
     
     return (
-        <>
-            <Select onChange={setDepartments} options={options} isMulti />
+        <div className="list-body">
+            <Select classNamePrefix="react-select" onChange={setDepartments} options={options} isMulti />
             { data.map((header, i) => <ListBody key={i} header={header.title} data={header.departments} departments={departments} />) }
-        </>
+        </div>
     )
 }
 

@@ -148,13 +148,15 @@ const board = [
               id: 1,
               title: 'Add card',
               description: 'Card of different user',
-              date: {week: 1, year: 2024}
+              date: {week: 1, year: 2024},
+              priority: 'high-priority'
             },
             {
                 id: 3,
                 title: 'Another card',
                 description: 'Idk what to write here',
-                date: {week: 1, year: 2024}
+                date: {week: 1, year: 2024},
+                priority: 'critical'
             },
           ]
         },

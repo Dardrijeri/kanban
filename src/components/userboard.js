@@ -4,6 +4,16 @@ import Card from './card';
 import Swimlane from './swimlane';
 
 function UserBoard(props){
+    props.board.columns.forEach((column) => column.cards.sort((a, b) => {
+        let priority = {
+            'critical': 3,
+            'high-priority': 2,
+            'medium-priority': 1,
+            'low-priority': 0
+        }
+        return (priority[b.priority] - priority[a.priority])
+    }))
+
     // current user's board
     const [controlledBoard, setBoard] = useState(props.board);
 
